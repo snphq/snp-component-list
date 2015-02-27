@@ -11,8 +11,10 @@ define (require, define, exports)->
 
     reloadTemplate: ->
       @$wrappedEl = @$el.children().detach()
-      if @$wrappedEl?
+      if @$wrappedEl? and @$wrappedEl.length
         @itemView = @__extendItemView()
+      else
+        throw Error "ListComponent: empty template"
       super
 
     __extendItemView: ->
