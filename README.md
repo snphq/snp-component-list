@@ -24,6 +24,8 @@ require.config
 
 ## Usage
 
+### Basic example
+
 Add component region in view, set to some collection into scope
 
 **coffee:**
@@ -79,3 +81,21 @@ ul(data-view-list-1)
 </div>
 ```
 
+### Custom itemViews
+
+You can set custom itemViews.
+```coffee
+  ItemView = Backbone.Epoxy.View.extend
+    # some code here
+
+  ItemView = _Page.extend
+    ...
+    regions:
+      ...
+      list:
+        el: '[data-view-list]'
+        view: ListComponent.extend
+          itemView: ItemView
+        scope: ->
+          {collection: @sampleCollection}
+```
