@@ -1,0 +1,32 @@
+{
+  "name": "snp-component-list",
+  "version": "0.0.1",
+  "homepage": "https://github.com/snphq/snp-component-list",
+  "authors": [
+    "Maksim Koretskiy <maksim.koretskiy@saltpepper.ru>"
+  ],
+  "description": "List component for generator-sp",
+  "main": "dist/ListComponent.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "generator-sp",
+    "backbone",
+    "list",
+    "component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "backbone-mixin": "~0.3.5",
+    "epoxy": "~0.4.1"
+  }
+}
