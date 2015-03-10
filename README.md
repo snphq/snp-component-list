@@ -6,7 +6,7 @@ Usefull only with [generator-sp](https://github.com/snphq/generator-sp).
 
 Install it from bower.
 ```bash
-bower install snp-component-list
+bower install snp-component-list --save
 ```
 
 
