@@ -1,8 +1,4 @@
-define (require, define, exports)->
-  Backbone = require "backbone"
-  MixinBackbone = require "backbone-mixin"
-  require "epoxy"
-
+HolderListComponent = (Backbone, MixinBackbone)->
   SuperView = MixinBackbone(Backbone.Epoxy.View)
   class ListComponent extends SuperView
     itemView: SuperView
@@ -30,3 +26,8 @@ define (require, define, exports)->
         bindings[':el'] = rootBinding
         ext.bindings = bindings
       @itemView.extend ext
+if (typeof define is 'function') and (typeof define.amd is 'object') and define.amd
+  define ["backbone", "backbone-mixin", "epoxy"], (Backbone, MixinBackbone)->
+    HolderListComponent(Backbone, MixinBackbone)
+else
+  window.ListComponent = HolderListComponent(Backbone, MixinBackbone)
