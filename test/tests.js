@@ -39,6 +39,9 @@ describe("ListComponent", function(){
     $('[data-js-list1] li:first').text().should.equal('First element');
     $('[data-js-list1] li:nth-child(2)').text().should.equal('Second element');
   });
-  it("Binds not root elements")
+  it("Binds not root elements", function(){
+    $('[data-js-list2]').find('tr').eq(0).find('td').text().should.contain('First element');
+    $('[data-js-list2]').find('tr').eq(1).find('td').text().should.contain('Second element');
+  })
 
 });
