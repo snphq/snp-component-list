@@ -31,7 +31,7 @@
       };
 
       ListComponent.prototype.__extendItemView = function() {
-        var bindings, ext, rootBinding, templateText;
+        var ext, reloadTemplate, rootBinding, templateText;
         templateText = this.$wrappedEl.html();
         ext = {
           tagName: this.$wrappedEl[0].tagName,
@@ -42,9 +42,11 @@
         };
         rootBinding = this.$wrappedEl.attr('data-bind');
         if (rootBinding) {
-          bindings = {} || this.itemView.prototype.bindings;
-          bindings[':el'] = rootBinding;
-          ext.bindings = bindings;
+          reloadTemplate = this.itemView.prototype.reloadTemplate;
+          ext.reloadTemplate = function() {
+            reloadTemplate.apply(this);
+            return this.$el.attr("data-bind", rootBinding);
+          };
         }
         return this.itemView.extend(ext);
       };

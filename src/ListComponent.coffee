@@ -22,9 +22,10 @@ HolderListComponent = (Backbone, MixinBackbone)->
       }
       rootBinding = @$wrappedEl.attr 'data-bind'
       if rootBinding
-        bindings = {} || @itemView.prototype.bindings
-        bindings[':el'] = rootBinding
-        ext.bindings = bindings
+        reloadTemplate = @itemView.prototype.reloadTemplate
+        ext.reloadTemplate = ->
+          reloadTemplate.apply this
+          @$el.attr("data-bind", rootBinding)
       @itemView.extend ext
 if (typeof define is 'function') and (typeof define.amd is 'object') and define.amd
   define ["backbone", "backbone-mixin", "epoxy"], (Backbone, MixinBackbone)->
