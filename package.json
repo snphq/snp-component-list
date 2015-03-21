@@ -4,7 +4,7 @@
   "description": "List component view for generator-sp",
   "main": "'gulp'",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,10 @@
     "gulp-coffee": "^2.3.1",
     "gulp-header": "^1.2.2",
     "gulp-util": "^3.0.4",
-    "mocha": "^2.2.1"
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coffee-preprocessor": "^0.2.1",
+    "karma-jasmine": "^0.3.5"
   }
 }
