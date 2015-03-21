@@ -1,5 +1,7 @@
 # List component view for generator-sp
 
+[![Build Status](https://travis-ci.org/snphq/snp-component-list.svg)](https://travis-ci.org/snphq/snp-component-list)
+
 Usefull only with [generator-sp](https://github.com/snphq/generator-sp).
 
 ## Installation
