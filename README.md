@@ -18,7 +18,7 @@ Add js requirements reference to `main.coffee`
 require.config
   paths:
   ...
-  'ListComponent': "#{VENDOR_PATH}/snp-component-scroll/dist/ListComponent"
+  'ListComponent': "#{VENDOR_PATH}/snp-component-list/dist/ListComponent"
 
 ...
 ```
